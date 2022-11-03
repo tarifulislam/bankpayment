@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accound</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+<body>
+
+
+   <!-- dashboard page........................................... -->
+
+    <div id="accound_dashboad">
+        <div class="dashbord_upper">
+
+            <h2 class="dashbood_header text-center mb-5">Welcome to My Bank</h2>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="deposit mt-4">
+                        <h5>Deposit</h5>
+                        <h2>$ <span id="currentDeposit">00</span></h2>
+                    </div>
+                </div>
+    
+                <div class="col-md-4">
+                    <div class="withdraw mt-4">
+                        <h5>Withdraw</h5>
+                        <h2>$ <span id="withdraw">00</span></h2>
+                    </div>
+                </div>
+    
+                <div class="col-md-4">
+                    <div class="balance mt-4">
+                        <h5>Balance</h5>
+                        <h2>$ <span id="balance">1200</span></h2>
+                    </div>
+                </div>
+    
+            </div>
+
+        </div>
+
+        <div id="dashboard_down">
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="dash_deposit_one mt-4">
+                            <h2>Deposit</h2>
+                            <input id="dipoAmmount" class="form-control  mt-4" type="text" placeholder="$ ammount you want to deposit">
+
+                            <button id="dipoBtn" class="btn btn-primary mt-4">Deposit</button>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="dash_deposit_two mt-4">
+
+                            <h2>Withdraw</h2>
+
+                            <input id="withdrawinput" class="form-control  mt-4" type="text" placeholder="$ ammount you want to withdraw">
+
+                            <button id="withdrawBtn" class="btn btn-primary mt-4">Withdraw</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+   <!-- login page........................................... -->
+
+    <div id="login_page" class="my_worldbank">
+
+        <h2 class="text-center">Welcome to World bank</h2>
+
+        <div class="outer_form shadow-lg mt-5 rounded">
+            <div class="outer_form p-5">
+                <h3>login</h3>
+
+                <input class="form-control mt-4" type="text" placeholder="Email">
+
+                <input class="form-control mt-4" type="password" placeholder="Password">
+
+                <button id="login_Btn" class="btn btn-primary mt-3">Enter</button>
+        
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+    // login page event.......................................................
+    const loginBtn = document.getElementById("login_Btn");
+    loginBtn.addEventListener("click", function(){
+
+        const loginPage = document.getElementById("login_page");
+        loginPage.style.display = "none";
+
+            const mydashboad = document.getElementById("accound_dashboad");
+            mydashboad.style.display = "block";
+    }); 
+
+        // dashboard page event.......................................................
+
+
+        const depositBtn = document.getElementById("dipoBtn");
+        depositBtn.addEventListener("click", function(){
+
+            const withrowNumber = getinputNumber("dipoAmmount");
+
+            updateSpanText("currentDeposit",withrowNumber);
+            updateSpanText("balance",withrowNumber);
+
+
+            document.getElementById("dipoAmmount").value = "";
+
+        });
+
+    // .......................................................................................
+
+        const withdrawButton = document.getElementById("withdrawBtn");
+        withdrawButton.addEventListener("click", function(){
+
+          const withrowNumber = getinputNumber("withdrawinput");
+         
+          updateSpanText("withdraw",withrowNumber);
+          updateSpanText("balance", -1*withrowNumber);
+
+          document.getElementById("withdrawinput").value = "";
+
+        })
+
+
+        function getinputNumber(id){
+            const ammount = document.getElementById(id).value;
+            const ammountNumber = parseFloat(ammount);
+            return ammountNumber;
+        }
+
+
+        function updateSpanText(id, depositNumber){
+            const currentBalance = document.getElementById(id).innerText;
+            const currentBlanceNumber = parseFloat(currentBalance);
+            const totalBalance = depositNumber + currentBlanceNumber;
+            document.getElementById(id).innerText = totalBalance;
+        }
+
+
+    </script>
+    
+</body>
+</html>

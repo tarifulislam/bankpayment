@@ -1,0 +1,64 @@
+body{
+    padding: 40px;
+}
+/* ........................... */
+
+#accound_dashboad{
+    display: none;
+}
+
+/* ........................... */
+
+
+.dashbood_header{
+    font-size: 45px;
+
+}
+
+.deposit{
+    background-color: slateblue;
+    border-radius: 10px;
+    padding: 20px 15px;
+    color: white;
+    margin: 0px 10px;
+    box-shadow: 20px 8px 30px rgba(0, 0, 0, 0.352);
+
+}
+
+.withdraw{
+    background-color: lightsalmon;
+    border-radius: 10px;
+    padding: 20px 15px;
+    color: white;
+    margin: 0px 10px;
+    box-shadow: 20px 8px 30px rgba(0, 0, 0, 0.352);
+}
+
+.balance{
+    background-color: orange;
+    border-radius: 10px;
+    padding: 20px 15px;
+    color: white;
+    margin: 0px 10px;
+    box-shadow: 20px 8px 30px rgba(0, 0, 0, 0.352);
+
+}
+
+
+.dash_deposit_one{
+    background-color: rgba(255, 166, 0, 0.637);
+    padding: 30px 60px 30px 30px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 20px 8px 30px rgba(0, 0, 0, 0.352);
+}
+
+.dash_deposit_two{
+    background-color: rgba(255, 166, 0, 0.637);
+    padding: 30px 60px 30px 30px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 20px 8px 30px rgba(0, 0, 0, 0.352);
+}
+
+
